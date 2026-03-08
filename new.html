@@ -12,10 +12,14 @@
   <script src="assets/config.js"></script>
 </head>
 <body data-page="new">
-  <div class="bg"></div><div class="carbon"></div><div class="topo"></div>
+  <div class="bg"></div>
+  <div class="carbon"></div>
+  <div class="topo"></div>
+
   <div class="wrap">
     <div class="shell">
-<div class="header">
+
+      <div class="header">
         <div class="brand">
           <img src="assets/zan.png" alt="ZAN Arabia">
           <span class="divider"></span>
@@ -26,10 +30,13 @@
             <i class="fa-solid fa-shield-halved"></i>
             <span>Warranty <span style="color:var(--xpel);font-weight:900">XPEL</span> By Zan Arabia</span>
           </div>
-          <button class="iconBtn" id="btnTheme" type="button" title="Theme"><i class="fa-solid fa-moon"></i></button>
+          <button class="iconBtn" id="btnTheme" type="button" title="Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
         </div>
       </div>
-<div class="content">
+
+      <div class="content">
         <div class="right">
           <h1 class="heroTitle">تسجيل ضمان جديد</h1>
           <p class="heroSub">اسم المركز ثابت: <span class="accent" id="dealerNameFixed"></span></p>
@@ -42,10 +49,23 @@
             </div>
 
             <form id="formNew" novalidate>
+              <!-- STEP 1 -->
               <div class="grid pane" data-pane="1">
-                <div><label>رقم الفاتورة</label><input name="invoice_number" required></div>
-                <div><label>تاريخ التركيب</label><input name="install_date" type="date" required></div>
-                <div class="full"><label>المدينة</label><input name="city" required></div>
+                <div>
+                  <label>رقم الفاتورة</label>
+                  <input name="invoice_number" required>
+                </div>
+
+                <div>
+                  <label>تاريخ التركيب</label>
+                  <input name="install_date" type="date" required>
+                </div>
+
+                <div class="full">
+                  <label>المدينة</label>
+                  <input name="city" required>
+                </div>
+
                 <div class="full">
                   <label>رفع صورة/ملف الفاتورة (PDF/JPG)</label>
                   <input name="invoice_file" type="file" accept=".pdf,image/*">
@@ -53,73 +73,129 @@
                 </div>
               </div>
 
+              <!-- STEP 2 -->
               <div class="grid pane" data-pane="2" style="display:none">
-                <div class="full"><label>اسم العميل</label><input name="customer_name" required></div>
-                <div><label>رقم الهاتف</label><input name="customer_phone" inputmode="tel" required placeholder="05xxxxxxxx"></div>
-                <div><label>البريد الإلكتروني</label><input name="customer_email" type="email" required></div>
-                <div><label>رقم الرول</label><input name="roll_number" required></div>
+                <div class="full">
+                  <label>اسم العميل</label>
+                  <input name="customer_name" required>
+                </div>
+
                 <div>
-                  <label>اسم المنتج</label>
-                  <select name="product_name" required>
+                  <label>رقم الهاتف</label>
+                  <input name="customer_phone" inputmode="tel" required placeholder="05xxxxxxxx">
+                </div>
+
+                <div>
+                  <label>البريد الإلكتروني</label>
+                  <input name="customer_email" type="email" required>
+                </div>
+
+                <div>
+                  <label>رقم اللوحة</label>
+                  <input name="plate_number" required>
+                </div>
+
+                <div>
+                  <label>نوع السيارة</label>
+                  <input name="car_type" required placeholder="مثال: Toyota Camry">
+                </div>
+
+                <div>
+                  <label>رقم الرول</label>
+                  <input name="roll_number" required>
+                </div>
+
+                <div class="full">
+                  <label>فئة المنتج</label>
+                  <select name="product_category" required>
                     <option value="">اختر</option>
-                    <option>XPEL ULTIMATE PLUS</option>
-                    <option>XPEL STEALTH</option>
-                    <option>XPEL PRIME XR PLUS</option>
-                    <option>XPEL PRIME XR</option>
-                    <option>XPEL PRIME HP</option>
-                    <option>أخرى</option>
+                    <option>حماية</option>
+                    <option>تظليل</option>
+                    <option>عناية</option>
+                    <option>منتجات أخرى</option>
                   </select>
                 </div>
               </div>
 
+              <!-- STEP 3 -->
               <div class="pane" data-pane="3" style="display:none">
                 <div class="review" id="newReview"></div>
               </div>
 
               <div class="btnRow">
-                <button class="btn btnGhost" id="btnBackHome" type="button"><i class="fa-solid fa-house"></i> رجوع</button>
+                <button class="btn btnGhost" id="btnBackHome" type="button">
+                  <i class="fa-solid fa-house"></i> رجوع
+                </button>
+
                 <span style="flex:1"></span>
-                <button class="btn btnGhost" id="btnPrev" type="button"><i class="fa-solid fa-chevron-right"></i> السابق</button>
-                <button class="btn btnPrimary" id="btnNext" type="button"><i class="fa-solid fa-chevron-left"></i> التالي</button>
-                <button class="btn btnPrimary" id="btnSaveNew" type="submit" style="display:none"><i class="fa-solid fa-floppy-disk"></i> حفظ</button>
+
+                <button class="btn btnGhost" id="btnPrev" type="button">
+                  <i class="fa-solid fa-chevron-right"></i> السابق
+                </button>
+
+                <button class="btn btnPrimary" id="btnNext" type="button">
+                  <i class="fa-solid fa-chevron-left"></i> التالي
+                </button>
+
+                <button class="btn btnPrimary" id="btnSaveNew" type="submit" style="display:none">
+                  <i class="fa-solid fa-floppy-disk"></i> حفظ
+                </button>
               </div>
+
               <div class="msg" id="newMsg"></div>
             </form>
           </div>
-
         </div>
+
         <div class="left">
           <div class="card">
-            <div class="badge"><i class="fa-solid fa-shield-halved"></i> تنبيه</div>
+            <div class="badge">
+              <i class="fa-solid fa-shield-halved"></i> تنبيه
+            </div>
             <div class="line"></div>
-            <div class="help">يرجى التأكد من صحة رقم الرول وبيانات الفاتورة قبل الحفظ.</div>
+            <div class="help">
+              يرجى التأكد من صحة رقم الرول ورقم اللوحة وبيانات الفاتورة قبل الحفظ.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <button class="waFloat" id="waBtn" type="button" aria-label="WhatsApp Support">
     <img src="assets/whatsapp.png" alt="WhatsApp">
   </button>
+
   <div class="waHint">تواصل واتساب</div>
 
   <div class="modalBackdrop" id="waModal">
     <div class="modal" role="dialog" aria-modal="true" aria-label="WhatsApp Support">
       <div class="modalHead">
-        <div class="modalTitle"><i class="fa-brands fa-whatsapp"></i> دعم واتساب</div>
-        <button class="closeX" id="waClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modalTitle">
+          <i class="fa-brands fa-whatsapp"></i> دعم واتساب
+        </div>
+        <button class="closeX" id="waClose" type="button" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+
       <div class="modalBody">
         <div class="note">اكتب رسالتك، ثم سيتم فتح واتساب مباشرة على رقم الدعم.</div>
         <div style="height:8px"></div>
         <textarea id="waText" placeholder="اكتب رسالتك هنا..."></textarea>
       </div>
+
       <div class="modalActions">
-        <button class="btn btnWA" id="waOpen" type="button"><i class="fa-brands fa-whatsapp"></i> فتح واتساب</button>
-        <button class="btn btnGhost" id="waCancel" type="button"><i class="fa-solid fa-ban"></i> إلغاء</button>
+        <button class="btn btnWA" id="waOpen" type="button">
+          <i class="fa-brands fa-whatsapp"></i> فتح واتساب
+        </button>
+        <button class="btn btnGhost" id="waCancel" type="button">
+          <i class="fa-solid fa-ban"></i> إلغاء
+        </button>
       </div>
     </div>
   </div>
+
   <script src="assets/app.js"></script>
 </body>
 </html>
