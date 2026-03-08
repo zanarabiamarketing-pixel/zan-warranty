@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>ZAN × XPEL — Edit Submission</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="assets/config.js"></script>
+</head>
+<body data-page="edit">
+  <div class="bg"></div><div class="carbon"></div><div class="topo"></div>
+  <div class="wrap">
+    <div class="shell">
+<div class="header">
+        <div class="brand">
+          <img src="assets/zan.png" alt="ZAN Arabia">
+          <span class="divider"></span>
+          <img src="assets/xpel.png" alt="XPEL">
+        </div>
+        <div class="rightActions">
+          <div class="pill" title="Warranty Portal">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Warranty <span style="color:var(--xpel);font-weight:900">XPEL</span> By Zan Arabia</span>
+          </div>
+          <button class="iconBtn" id="btnTheme" type="button" title="Theme"><i class="fa-solid fa-moon"></i></button>
+        </div>
+      </div>
+<div class="content">
+        <div class="right">
+          <h1 class="heroTitle">تعديل تسجيل</h1>
+          <p class="heroSub">اسم المركز ثابت: <span class="accent" id="dealerNameFixed"></span></p>
+
+          <div class="card" style="margin-top:14px">
+            <label>ادخل رقم الفاتورة لتحميل بياناتك</label>
+            <input id="editInvoice" placeholder="INV-...">
+            <div class="btnRow" style="margin-top:10px">
+              <button class="btn btnPrimary" id="btnLoadEdit" type="button"><i class="fa-solid fa-download"></i> تحميل</button>
+              <button class="btn btnGhost" id="btnBackHome2" type="button"><i class="fa-solid fa-house"></i> رجوع</button>
+            </div>
+            <div class="msg" id="editLoadMsg"></div>
+
+            <form id="formEdit" style="display:none; margin-top:12px" novalidate>
+              <div class="grid">
+                <div><label>رقم الفاتورة</label><input name="invoice_number" readonly></div>
+                <div><label>تاريخ التركيب</label><input name="install_date" type="date" required></div>
+                <div class="full"><label>المدينة</label><input name="city" required></div>
+                <div class="full"><label>اسم العميل</label><input name="customer_name" required></div>
+                <div><label>رقم الهاتف</label><input name="customer_phone" inputmode="tel" required></div>
+                <div><label>البريد الإلكتروني</label><input name="customer_email" type="email" required></div>
+                <div><label>رقم الرول</label><input name="roll_number" required></div>
+                <div>
+                  <label>اسم المنتج</label>
+                  <select name="product_name" required>
+                    <option value="">اختر</option>
+                    <option>XPEL ULTIMATE PLUS</option>
+                    <option>XPEL STEALTH</option>
+                    <option>XPEL PRIME XR PLUS</option>
+                    <option>XPEL PRIME XR</option>
+                    <option>XPEL PRIME HP</option>
+                    <option>أخرى</option>
+                  </select>
+                </div>
+                <div class="full">
+                  <label>فاتورة جديدة (اختياري)</label>
+                  <input name="invoice_file" type="file" accept=".pdf,image/*">
+                  <div class="fileLine" id="editFileLine"></div>
+                  <div class="help" id="existingFile"></div>
+                </div>
+              </div>
+
+              <div class="btnRow">
+                <button class="btn btnGhost" id="btnCancelEdit" type="button"><i class="fa-solid fa-xmark"></i> إلغاء</button>
+                <button class="btn btnPrimary" id="btnSaveEdit" type="submit"><i class="fa-solid fa-floppy-disk"></i> حفظ التعديل</button>
+              </div>
+              <div class="msg" id="editMsg"></div>
+            </form>
+          </div>
+
+        </div>
+        <div class="left">
+          <div class="card">
+            <div class="badge"><i class="fa-solid fa-circle-info"></i> شرط التعديل</div>
+            <div class="line"></div>
+            <div class="help">التعديل مسموح مرة واحدة فقط خلال 24 ساعة من وقت التسجيل.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="waFloat" id="waBtn" type="button" aria-label="WhatsApp Support">
+    <img src="assets/whatsapp.png" alt="WhatsApp">
+  </button>
+  <div class="waHint">تواصل واتساب</div>
+
+  <div class="modalBackdrop" id="waModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="WhatsApp Support">
+      <div class="modalHead">
+        <div class="modalTitle"><i class="fa-brands fa-whatsapp"></i> دعم واتساب</div>
+        <button class="closeX" id="waClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modalBody">
+        <div class="note">اكتب رسالتك، ثم سيتم فتح واتساب مباشرة على رقم الدعم.</div>
+        <div style="height:8px"></div>
+        <textarea id="waText" placeholder="اكتب رسالتك هنا..."></textarea>
+      </div>
+      <div class="modalActions">
+        <button class="btn btnWA" id="waOpen" type="button"><i class="fa-brands fa-whatsapp"></i> فتح واتساب</button>
+        <button class="btn btnGhost" id="waCancel" type="button"><i class="fa-solid fa-ban"></i> إلغاء</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
