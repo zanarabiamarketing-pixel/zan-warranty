@@ -1,95 +1,297 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <title>ZAN × XPEL — Login</title>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="assets/style.css"/>
-  <script src="assets/config.js"></script>
+
+<title>ZAN × XPEL — Login</title>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<link rel="stylesheet" href="assets/style.css"/>
+
+<script src="assets/config.js"></script>
+
 </head>
+
 <body data-page="login">
-  <div class="bg"></div><div class="carbon"></div><div class="topo"></div>
-  <div class="wrap">
-    <div class="shell">
+
+<div class="bg"></div>
+<div class="carbon"></div>
+<div class="topo"></div>
+
+<div class="wrap">
+
+<div class="shell">
+
+<!-- HEADER -->
+
 <div class="header">
-        <div class="brand">
-          <img src="assets/zan.png" alt="ZAN Arabia">
-          <span class="divider"></span>
-          <img src="assets/xpel.png" alt="XPEL">
-        </div>
-        <div class="rightActions">
-          <div class="pill" title="Warranty Portal">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Warranty <span style="color:var(--xpel);font-weight:900">XPEL</span> By Zan Arabia</span>
-          </div>
-          <button class="iconBtn" id="btnTheme" type="button" title="Theme"><i class="fa-solid fa-moon"></i></button>
-        </div>
-      </div>
+
+<div class="brand">
+
+<img src="assets/zan.png" alt="ZAN Arabia">
+
+<span class="divider"></span>
+
+<img src="assets/xpel.png" alt="XPEL">
+
+</div>
+
+<div class="rightActions">
+
+<div class="pill" title="Warranty Portal">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>Warranty <span style="color:var(--xpel);font-weight:900">XPEL</span> By Zan Arabia</span>
+
+</div>
+
+<button class="iconBtn" id="btnTheme" type="button" title="Theme">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
 <div class="content">
-        <div class="right">
-          <h1 class="heroTitle">Warranty <span class="accent">XPEL</span> By Zan Arabia</h1>
-          <p class="heroSub">بوابة تسجيل الضمان للموزّعين. تسجيل بالبريد + الهاتف + كلمة مرور</p>
 
-          <div class="card" style="margin-top:14px">
-            <div class="grid">
-              <div>
-                <label>البريد الإلكتروني</label>
-                <input id="loginEmail" type="email" placeholder="dealer@email.com">
-              </div>
-              <div>
-                <label>رقم الهاتف</label>
-                <input id="loginPhone" inputmode="tel" placeholder="+9665xxxxxxxx أو 05xxxxxxxx">
-              </div>
-              <div class="full">
-                <label>كلمة المرور</label>
-                <input id="loginPass" type="password" placeholder="••••••••">
-              </div>
-              <div class="full">
-                <div class="btnRow">
-                  <button class="btn btnPrimary" id="btnLogin" type="button"><i class="fa-solid fa-right-to-bracket"></i> دخول</button>
-                  <button class="btn btnGhost" id="btnGoRegister" type="button"><i class="fa-solid fa-user-plus"></i> تسجيل موزّع جديد</button>
-                </div>
-                <div class="msg" id="loginMsg"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="left">
-          <div class="card">
-            <div class="badge"><i class="fa-solid fa-circle-info"></i> ملاحظة</div>
-            <div class="line"></div>
-            <div class="help">هذه الصفحة خاصة بالموزعين المعتمدين. للتواصل مع الدعم استخدم زر واتساب.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="waFloat" id="waBtn" type="button" aria-label="WhatsApp Support">
-    <img src="assets/whatsapp.png" alt="WhatsApp">
-  </button>
-  <div class="waHint">تواصل واتساب</div>
+<div class="right">
 
-  <div class="modalBackdrop" id="waModal">
-    <div class="modal" role="dialog" aria-modal="true" aria-label="WhatsApp Support">
-      <div class="modalHead">
-        <div class="modalTitle"><i class="fa-brands fa-whatsapp"></i> دعم واتساب</div>
-        <button class="closeX" id="waClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="modalBody">
-        <div class="note">اكتب رسالتك، ثم سيتم فتح واتساب مباشرة على رقم الدعم.</div>
-        <div style="height:8px"></div>
-        <textarea id="waText" placeholder="اكتب رسالتك هنا..."></textarea>
-      </div>
-      <div class="modalActions">
-        <button class="btn btnWA" id="waOpen" type="button"><i class="fa-brands fa-whatsapp"></i> فتح واتساب</button>
-        <button class="btn btnGhost" id="waCancel" type="button"><i class="fa-solid fa-ban"></i> إلغاء</button>
-      </div>
-    </div>
-  </div>
-  <script src="assets/app.js"></script>
+<h1 class="heroTitle">
+
+Warranty <span class="accent">XPEL</span> By Zan Arabia
+
+</h1>
+
+<p class="heroSub">
+
+بوابة تسجيل الضمان للمراكز المعتمدة. تسجيل الدخول بالبريد الإلكتروني ورقم الهاتف وكلمة المرور.
+
+</p>
+
+<div class="card" style="margin-top:14px">
+
+<div class="grid">
+
+<div>
+
+<label>البريد الإلكتروني</label>
+
+<input
+id="loginEmail"
+type="email"
+placeholder="dealer@email.com"
+/>
+
+</div>
+
+<div>
+
+<label>رقم الهاتف</label>
+
+<input
+id="loginPhone"
+inputmode="tel"
+placeholder="+9665xxxxxxxx أو 05xxxxxxxx"
+/>
+
+</div>
+
+<div class="full">
+
+<label>كلمة المرور</label>
+
+<input
+id="loginPass"
+type="password"
+placeholder="••••••••"
+/>
+
+</div>
+
+<div class="full">
+
+<div class="btnRow">
+
+<button
+class="btn btnPrimary"
+id="btnLogin"
+type="button"
+>
+
+<i class="fa-solid fa-right-to-bracket"></i>
+دخول
+
+</button>
+
+<button
+class="btn btnGhost"
+id="btnGoRegister"
+type="button"
+>
+
+<i class="fa-solid fa-user-plus"></i>
+تسجيل مركز جديد
+
+</button>
+
+</div>
+
+<div class="msg" id="loginMsg"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="left">
+
+<div class="card">
+
+<div class="badge">
+
+<i class="fa-solid fa-circle-info"></i>
+ملاحظة
+
+</div>
+
+<div class="line"></div>
+
+<div class="help">
+
+هذه الصفحة خاصة بالموزعين والمراكز المعتمدة.
+
+إذا قمت بتسجيل مركز جديد فسيتم إرسال طلبك للمراجعة
+وسيصبح الحساب فعالًا بعد موافقة الأدمن.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WHATSAPP BUTTON -->
+
+<button
+class="waFloat"
+id="waBtn"
+type="button"
+aria-label="WhatsApp Support"
+>
+
+<img src="assets/whatsapp.png" alt="WhatsApp">
+
+</button>
+
+<div class="waHint">
+
+تواصل واتساب
+
+</div>
+
+<!-- WHATSAPP MODAL -->
+
+<div class="modalBackdrop" id="waModal">
+
+<div
+class="modal"
+role="dialog"
+aria-modal="true"
+aria-label="WhatsApp Support"
+>
+
+<div class="modalHead">
+
+<div class="modalTitle">
+
+<i class="fa-brands fa-whatsapp"></i>
+دعم واتساب
+
+</div>
+
+<button
+class="closeX"
+id="waClose"
+type="button"
+aria-label="Close"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div class="modalBody">
+
+<div class="note">
+
+اكتب رسالتك، ثم سيتم فتح واتساب مباشرة على رقم الدعم.
+
+</div>
+
+<div style="height:8px"></div>
+
+<textarea
+id="waText"
+placeholder="اكتب رسالتك هنا..."
+></textarea>
+
+</div>
+
+<div class="modalActions">
+
+<button
+class="btn btnWA"
+id="waOpen"
+type="button"
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+فتح واتساب
+
+</button>
+
+<button
+class="btn btnGhost"
+id="waCancel"
+type="button"
+>
+
+<i class="fa-solid fa-ban"></i>
+إلغاء
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="assets/app.js"></script>
+
 </body>
 </html>
