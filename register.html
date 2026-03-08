@@ -12,92 +12,152 @@
   <script src="assets/config.js"></script>
 </head>
 <body data-page="register">
-  <div class="bg"></div><div class="carbon"></div><div class="topo"></div>
+  <div class="bg"></div>
+  <div class="carbon"></div>
+  <div class="topo"></div>
+
   <div class="wrap">
     <div class="shell">
-<div class="header">
+
+      <div class="header">
         <div class="brand">
           <img src="assets/zan.png" alt="ZAN Arabia">
           <span class="divider"></span>
           <img src="assets/xpel.png" alt="XPEL">
         </div>
+
         <div class="rightActions">
           <div class="pill" title="Warranty Portal">
             <i class="fa-solid fa-shield-halved"></i>
             <span>Warranty <span style="color:var(--xpel);font-weight:900">XPEL</span> By Zan Arabia</span>
           </div>
-          <button class="iconBtn" id="btnTheme" type="button" title="Theme"><i class="fa-solid fa-moon"></i></button>
+
+          <button class="iconBtn" id="btnTheme" type="button" title="Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
         </div>
       </div>
-<div class="content">
+
+      <div class="content">
         <div class="right">
-          <h1 class="heroTitle">تسجيل موزّع جديد</h1>
-          <p class="heroSub">إنشاء حساب بالبريد + الهاتف + كلمة مرور</p>
+          <h1 class="heroTitle">تسجيل مركز جديد</h1>
+          <p class="heroSub">أنشئ حساب مركزك باستخدام البريد الإلكتروني ورقم الهاتف وكلمة المرور.</p>
 
           <div class="card" style="margin-top:14px">
             <div class="grid">
               <div class="full">
-                <label>اسم الموزّع / المركز</label>
+                <label>اسم المركز / الموزّع</label>
                 <input id="regName" placeholder="اسم المركز">
               </div>
+
               <div>
                 <label>البريد الإلكتروني</label>
                 <input id="regEmail" type="email" placeholder="dealer@email.com">
               </div>
+
               <div>
                 <label>رقم الهاتف</label>
                 <input id="regPhone" inputmode="tel" placeholder="+9665xxxxxxxx أو 05xxxxxxxx">
               </div>
+
               <div>
                 <label>كلمة المرور</label>
                 <input id="regPass" type="password" placeholder="اختر كلمة مرور">
               </div>
+
               <div>
                 <label>تأكيد كلمة المرور</label>
                 <input id="regPass2" type="password" placeholder="أعد كتابة كلمة المرور">
               </div>
+
               <div class="full">
                 <div class="btnRow">
-                  <button class="btn btnPrimary" id="btnRegister" type="button"><i class="fa-solid fa-user-check"></i> إنشاء حساب</button>
-                  <button class="btn btnGhost" id="btnGoLogin" type="button"><i class="fa-solid fa-arrow-right"></i> لدي حساب</button>
+                  <button class="btn btnPrimary" id="btnRegister" type="button">
+                    <i class="fa-solid fa-user-check"></i>
+                    إرسال طلب التسجيل
+                  </button>
+
+                  <button class="btn btnGhost" id="btnGoLogin" type="button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    لدي حساب
+                  </button>
                 </div>
+
                 <div class="msg" id="regMsg"></div>
               </div>
             </div>
           </div>
         </div>
+
         <div class="left">
           <div class="card">
-            <div class="badge"><i class="fa-solid fa-shield-halved"></i> تنبيه</div>
+            <div class="badge">
+              <i class="fa-solid fa-shield-halved"></i>
+              تنبيه
+            </div>
+
             <div class="line"></div>
-            <div class="help">بعد الموافقة على الحساب يمكنك تسجيل بيانات الضمان وإرسالها مباشرة إلى النظام.</div>
+
+            <div class="help">
+              بعد إرسال الطلب سيتم تسجيل المركز بحالة <b>قيد المراجعة</b>، ولن يتمكن من استخدام النظام إلا بعد اعتماد الأدمن وتحويل الحالة إلى <b>Active</b>.
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <div class="badge">
+              <i class="fa-solid fa-circle-info"></i>
+              ملاحظة
+            </div>
+
+            <div class="line"></div>
+
+            <div class="help">
+              تأكد من صحة البريد الإلكتروني ورقم الهاتف، لأنهما سيُستخدمان لاحقًا في تسجيل الدخول وإدارة الضمانات الخاصة بالمركز.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <button class="waFloat" id="waBtn" type="button" aria-label="WhatsApp Support">
     <img src="assets/whatsapp.png" alt="WhatsApp">
   </button>
+
   <div class="waHint">تواصل واتساب</div>
 
   <div class="modalBackdrop" id="waModal">
     <div class="modal" role="dialog" aria-modal="true" aria-label="WhatsApp Support">
       <div class="modalHead">
-        <div class="modalTitle"><i class="fa-brands fa-whatsapp"></i> دعم واتساب</div>
-        <button class="closeX" id="waClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modalTitle">
+          <i class="fa-brands fa-whatsapp"></i>
+          دعم واتساب
+        </div>
+        <button class="closeX" id="waClose" type="button" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+
       <div class="modalBody">
         <div class="note">اكتب رسالتك، ثم سيتم فتح واتساب مباشرة على رقم الدعم.</div>
         <div style="height:8px"></div>
         <textarea id="waText" placeholder="اكتب رسالتك هنا..."></textarea>
       </div>
+
       <div class="modalActions">
-        <button class="btn btnWA" id="waOpen" type="button"><i class="fa-brands fa-whatsapp"></i> فتح واتساب</button>
-        <button class="btn btnGhost" id="waCancel" type="button"><i class="fa-solid fa-ban"></i> إلغاء</button>
+        <button class="btn btnWA" id="waOpen" type="button">
+          <i class="fa-brands fa-whatsapp"></i>
+          فتح واتساب
+        </button>
+
+        <button class="btn btnGhost" id="waCancel" type="button">
+          <i class="fa-solid fa-ban"></i>
+          إلغاء
+        </button>
       </div>
     </div>
   </div>
+
   <script src="assets/app.js"></script>
 </body>
 </html>
