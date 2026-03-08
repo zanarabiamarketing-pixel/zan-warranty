@@ -12,72 +12,141 @@
   <script src="assets/config.js"></script>
 </head>
 <body data-page="portal">
-  <div class="bg"></div><div class="carbon"></div><div class="topo"></div>
+  <div class="bg"></div>
+  <div class="carbon"></div>
+  <div class="topo"></div>
+
   <div class="wrap">
     <div class="shell">
-<div class="header">
+
+      <div class="header">
         <div class="brand">
           <img src="assets/zan.png" alt="ZAN Arabia">
           <span class="divider"></span>
           <img src="assets/xpel.png" alt="XPEL">
         </div>
+
         <div class="rightActions">
           <div class="pill" title="Warranty Portal">
             <i class="fa-solid fa-shield-halved"></i>
             <span>Warranty <span style="color:var(--xpel);font-weight:900">XPEL</span> By Zan Arabia</span>
           </div>
-          <button class="iconBtn" id="btnTheme" type="button" title="Theme"><i class="fa-solid fa-moon"></i></button>
+
+          <button class="iconBtn" id="btnTheme" type="button" title="Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
         </div>
       </div>
-<div class="content">
+
+      <div class="content">
         <div class="right">
-          <h1 class="heroTitle">لوحة الموزّع</h1>
-          <p class="heroSub">اختر العملية المطلوبة</p>
+          <h1 class="heroTitle">لوحة المركز</h1>
+          <p class="heroSub">اختر العملية المطلوبة لإدارة الضمانات الخاصة بمركزك.</p>
 
           <div class="card" style="margin-top:14px">
-            <div class="badge"><i class="fa-solid fa-user-shield"></i> <span id="who"></span></div>
+            <div class="badge">
+              <i class="fa-solid fa-user-shield"></i>
+              <span id="who"></span>
+            </div>
+
             <div class="line"></div>
+
             <div class="btnRow">
-              <button class="btn btnPrimary" id="btnNew" type="button"><i class="fa-solid fa-file-circle-plus"></i> تسجيل جديد</button>
-              <button class="btn btnGhost" id="btnEdit" type="button"><i class="fa-solid fa-pen"></i> تعديل تسجيل (مرة واحدة)</button>
+              <button class="btn btnPrimary" id="btnNew" type="button">
+                <i class="fa-solid fa-file-circle-plus"></i>
+                تسجيل جديد
+              </button>
+
+              <button class="btn btnGhost" id="btnEdit" type="button">
+                <i class="fa-solid fa-pen"></i>
+                تعديل تسجيل
+              </button>
+
+              <button class="btn btnGhost" id="btnMyWarranties" type="button" onclick="window.location.href='my-warranties.html'">
+                <i class="fa-solid fa-rectangle-list"></i>
+                سجل ضماناتي
+              </button>
+
               <span style="flex:1"></span>
-              <button class="btn btnGhost" id="btnLogout" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+
+              <button class="btn btnGhost" id="btnLogout" type="button">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                تسجيل الخروج
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="left">
+          <div class="card">
+            <div class="badge">
+              <i class="fa-solid fa-circle-info"></i>
+              شرط التعديل
+            </div>
+
+            <div class="line"></div>
+
+            <div class="help">
+              التعديل مسموح مرة واحدة فقط خلال أول 24 ساعة من وقت تسجيل الضمان.
             </div>
           </div>
 
-        </div>
-        <div class="left">
-          <div class="card">
-            <div class="badge"><i class="fa-solid fa-circle-info"></i> شرط التعديل</div>
+          <div class="card" style="margin-top:12px">
+            <div class="badge">
+              <i class="fa-solid fa-circle-check"></i>
+              ملاحظات مهمة
+            </div>
+
             <div class="line"></div>
-            <div class="help">التعديل مسموح مرة واحدة فقط خلال 24 ساعة من وقت التسجيل.</div>
+
+            <div class="help">
+              لا يمكن استخدام رقم رول سبق استخدامه من قبل، وسيتم لاحقًا ربط الرولات المخصصة لكل مركز في قائمة منسدلة تلقائيًا.
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
+
   <button class="waFloat" id="waBtn" type="button" aria-label="WhatsApp Support">
     <img src="assets/whatsapp.png" alt="WhatsApp">
   </button>
+
   <div class="waHint">تواصل واتساب</div>
 
   <div class="modalBackdrop" id="waModal">
     <div class="modal" role="dialog" aria-modal="true" aria-label="WhatsApp Support">
       <div class="modalHead">
-        <div class="modalTitle"><i class="fa-brands fa-whatsapp"></i> دعم واتساب</div>
-        <button class="closeX" id="waClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modalTitle">
+          <i class="fa-brands fa-whatsapp"></i>
+          دعم واتساب
+        </div>
+        <button class="closeX" id="waClose" type="button" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+
       <div class="modalBody">
         <div class="note">اكتب رسالتك، ثم سيتم فتح واتساب مباشرة على رقم الدعم.</div>
         <div style="height:8px"></div>
         <textarea id="waText" placeholder="اكتب رسالتك هنا..."></textarea>
       </div>
+
       <div class="modalActions">
-        <button class="btn btnWA" id="waOpen" type="button"><i class="fa-brands fa-whatsapp"></i> فتح واتساب</button>
-        <button class="btn btnGhost" id="waCancel" type="button"><i class="fa-solid fa-ban"></i> إلغاء</button>
+        <button class="btn btnWA" id="waOpen" type="button">
+          <i class="fa-brands fa-whatsapp"></i>
+          فتح واتساب
+        </button>
+
+        <button class="btn btnGhost" id="waCancel" type="button">
+          <i class="fa-solid fa-ban"></i>
+          إلغاء
+        </button>
       </div>
     </div>
   </div>
+
   <script src="assets/app.js"></script>
 </body>
 </html>
