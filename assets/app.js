@@ -38,19 +38,31 @@
   function clearSession(){ sessionStorage.removeItem(SESSION_KEY); }
 
   async function apiPost(action, payload){
-    if (!API_BASE) throw new Error("لم يتم ضبط API_BASE بعد.");
-    const res = await fetch(API_BASE, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ action, ...payload })
-    });
-    const txt = await res.text();
-    let data;
-    try { data = JSON.parse(txt); } catch(e){ data = {status:'error', message:txt}; }
-    if (!res.ok || data.status === 'error') throw new Error(data.message || ('HTTP '+res.status));
-    return data;
+  if (!API_BASE) throw new Error("لم يتم ضبط API_BASE بعد.");
+
+  const res = await fetch(API_BASE, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8'
+    },
+    body: JSON.stringify({ action, ...payload })
+  });
+
+  const txt = await res.text();
+  let data;
+
+  try {
+    data = JSON.parse(txt);
+  } catch (e) {
+    data = { status: 'error', message: txt };
   }
 
+  if (!res.ok || data.status === 'error') {
+    throw new Error(data.message || ('HTTP ' + res.status));
+  }
+
+  return data;
+}
   // WhatsApp modal
   const waModal = $('#waModal');
   const waBtn = $('#waBtn');
